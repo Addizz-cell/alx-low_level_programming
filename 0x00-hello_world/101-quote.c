@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
  * main - should print out the speckfic phrase
- * return: 1 if output is correct ans none other
+ *
+ * Return: 1 if output is correct ans none other
  */
 int main(void)
 {
