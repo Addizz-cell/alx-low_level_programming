@@ -7,23 +7,30 @@
 
 int main(void)
 {
-	int i, j;
+	int firstDigit = 0, seconDigit;
 
-	for (i = 0; i <= 99; i++)
+	while (firstDigit <= 99)
 	{
-		for (j = i; j <= 99; j++)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-			putchar(i / 10 + '0');
-			putchar(i % 10 + '0');
-			putchar(' ');
-			putchar(j / 10 + '0');
-			putchar(j % 10 + '0');
-			if (i != 99 || j != 99)
+			if (seconDigit != firstDigit)
 			{
-				putchar(',');
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
 				putchar(' ');
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+
+				if (firstDigit != 98 || seconDigit != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
+			++seconDigit;
 		}
+		++firstDigit;
 	}
 	putchar('\n');
 
