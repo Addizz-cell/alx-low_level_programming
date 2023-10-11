@@ -2,7 +2,6 @@
 #include "main.h"
 
 /**
- * main - Entry point
  * jack_bauer - take in the hrs and minute
  *
  * Return: AlwYs 0
@@ -23,10 +22,4 @@ void jack_bauer(void)
 		hour++;
 		minute = 0;
 	}
-}
-
-int main(void)
-{
-	jack_bauer();
-	return (0);
 }
