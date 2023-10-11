@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _slower - check if a character is powercase
+ * _islower - check if a character is powercase
  * @c: The character to be checked
  *
  * Return: return 1 if c is lowercse, otherwise 0
