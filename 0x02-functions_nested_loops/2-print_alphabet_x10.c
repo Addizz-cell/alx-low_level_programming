@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - entry
+ * print_alphabet_x10 - entry
  *
  * Return: Always 0
  */
