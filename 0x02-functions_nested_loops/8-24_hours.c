@@ -10,12 +10,18 @@
 
 void jack_bauer(void)
 {
-	for (int hour = 0; hour < 24; hour++)
+	int hour = 0;
+	int minute = 0;
+
+	while  (hour < 24)
 	{
-		for (int minute = 0; minute < 60; minute++)
+		while (minute < 60)
 		{
 			printf("%02d:%02d\n", hour, minute);
+			minute++;
 		}
+		hour++;
+		minute = 0;
 	}
 }
 
