@@ -7,12 +7,25 @@
  */
 void times_table(void)
 {
-	int i = 0;
+	int i = 0, j = 0;
 
-	while (i <= 10)
+
+	while (i <= 9)
 	{
-		printf("9 x %d = %d\n", i, 9 * i);
+		while (j <= 9)
+		{
+			if (j == 9)
+			{
+				printf("%d\n", i * j);
+			}
+			else
+			{
+				printf("%d, ", i * j);
+			}
+			j++;
+		}
 		i++;
+		j = 0;
 	}
 }
 
