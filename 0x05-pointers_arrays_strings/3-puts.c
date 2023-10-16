@@ -1,5 +1,7 @@
 #include "main.h"
 
+void _putchar(char c);
+
 /**
  * _puts - Prints a string, followed by a new line, to stdout.
  * @str: The string to be printed.
