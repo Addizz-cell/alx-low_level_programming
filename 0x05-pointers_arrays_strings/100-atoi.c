@@ -12,23 +12,17 @@ int _atoi(char *s)
 	int result = 0;
 	int i = 0;
 
-	if (s[0] == '-')
-	{
-		sign = -1;
+	while (s[i] == '-' || s[i] == '+') {
+		if (s[i] == '-')
+			sign *= -1;
 		i++;
 	}
 
-	for (; s[i] != '\0'; i++)
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			result = result * 10 + (s[i] - '0');
-		}
-		else
-		{
-			break;
-		}
+	// Convert the string to an integer
+	while (s[i] >= '0' && s[i] <= '9') {
+		result = result * 10 + (s[i] - '0');
+		i++;
 	}
 
-	return (result * sign);
+	return result * sign;
 }

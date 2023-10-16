@@ -12,11 +12,17 @@ int main(void)
 {
 	srand(time(NULL));
 
-	for (int i = 0; i < 12; i++)
-	{
-		char password = rand() % 94 + 32;
+	char password[13];
+	int i = 0;
 
-		printf("%c", password);
+	while (i < 12);
+	{
+		password[i] = rand() % 94 + 32;
+		i++;
 	}
+	password[12] = ‘\O’;
+
+	printf(“%s\n”, password);
+
 	return (0);
 }
