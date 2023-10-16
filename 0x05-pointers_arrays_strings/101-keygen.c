@@ -12,22 +12,11 @@ int main(void)
 {
 	srand(time(NULL));
 
-	while (1)
+	for (int i = 0; i < 12; i++)
 	{
-		char password[12];
-	}
-	for (int i = 0; i < 11; i++)
-	{
-		password[i] = rand() % 94 + 32;
-	}
-	password[11] = '\0';
+		char password = rand() % 94 + 32;
 
-	if (strcmp(password, VALID_PASSWORD) == 0)
-	{
-		printf("Valid password: %s\n", password);
-		break;
+		printf("%c", password);
 	}
-
-
 	return (0);
 }
