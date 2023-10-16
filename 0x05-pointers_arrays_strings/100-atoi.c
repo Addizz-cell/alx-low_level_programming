@@ -18,7 +18,6 @@ int _atoi(char *s)
 		i++;
 	}
 
-	// Convert the string to an integer
 	while (s[i] >= '0' && s[i] <= '9') {
 		result = result * 10 + (s[i] - '0');
 		i++;
