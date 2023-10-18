@@ -1,38 +1,35 @@
 #include "main.h"
 
 /**
- * print_number - Prints an integer.
- * @n: The integer to print.
+ * print_number - printing number with puts
+ *
+ * @n: input int
  */
 void print_number(int n)
 {
-	if (n < 0)
+	/*Declaring variables*/
+	int count = 0, pow = 1;
+	unsigned int num = n;
+
+
+	if (n < 0) /*Evaluate this condition*/
 	{
 		_putchar('-');
-		n = -n;
+		num = -n;
 	}
-
-	if (n == 0)
+	while (n != 0)
 	{
-		_putchar('0');
-		return;
+		n /= 10;
+		count++;
 	}
-
-	int power = 1;
-	int num = n;
-
-	while (num / 10 > 0)
+	while (count > 1)
 	{
-		power *= 10;
-		num /= 10;
+		pow *= 10;
+		count--;
 	}
-
-	while (power > 0)
+	while (pow >= 1)
 	{
-		int digit = n / power;
-
-		_putchar(digit + '0');
-		n -= digit * power;
-		power /= 10;
+		_putchar(num / pow % 10 + '0');
+		pow /= 10;
 	}
 }
