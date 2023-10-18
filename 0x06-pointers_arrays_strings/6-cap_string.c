@@ -1,28 +1,30 @@
 #include "main.h"
 /**
- * cap_string - capitalizes chars after given deliminators
- * @s: string to uppercase
- * Return: returns modified string
+ * cap_string - Capitalizes the first letter of each word in a string.
+ * Separators of words: space, tabulation, new line, ,, ;, ., !, ?, ", (, ), {, and }.
+ * @s: Pointer to a string.
+ *
+ * Return: Pointer to the modified string.
  */
 char *cap_string(char *s)
 {
-	int count, upper;
+	int capitalize = 1;
 
-	upper = -32; /*value constant 32*/
-
-	count = 0;
-	/*Start WHILE*/
-	while (s[count] != '\0')
+	while (*s)
 	{
-		/*letters lowercase*/
-		if (s[count] >= 'a' && s[count] <= 'z')
+		if (capitalize && *s >= 'a' && *s <= 'z')
 		{
-			/*Convert uppercase*/
-			if (s[count] == *s || separator(s[count - 1]))
-
-				s[count] += upper;
+			*s -= 32;
+			capitalize = 0;
 		}
-		count++; /*Add count*/
+
+		if (is_separator(*s))
+		{
+			capitalize = 1;
+		}
+
+		s++;
 	}
+
 	return (s);
 }
