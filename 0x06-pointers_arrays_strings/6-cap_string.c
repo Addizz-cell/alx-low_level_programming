@@ -1,30 +1,29 @@
 #include "main.h"
 /**
  * cap_string - Capitalizes the first letter of each word in a string.
- * Separators of words: space, tabulation, new line, ,, ;, ., !, ?, ", (, ), {, and }.
- * @s: Pointer to a string.
+ * @str: Pointer to a string.
  *
  * Return: Pointer to the modified string.
  */
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
-	int capitalize = 1;
+	int capitalize_next = 1;
+	int i = 0;
 
-	while (*s)
+	while (str[i] != '\0')
 	{
-		if (capitalize && *s >= 'a' && *s <= 'z')
+		if (capitalize_next && isalpha(str[i]))
 		{
-			*s -= 32;
-			capitalize = 0;
+			str[i] = toupper(str[i]);
+			capitalize_next = 0;
+		}
+		else if (isspace(str[i]) || ispunct(str[i]))
+		{
+			capitalize_next = 1;
 		}
 
-		if (is_separator(*s))
-		{
-			capitalize = 1;
-		}
-
-		s++;
+		i++;
 	}
 
-	return (s);
+	return (str);
 }
