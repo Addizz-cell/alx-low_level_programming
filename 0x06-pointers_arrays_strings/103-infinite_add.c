@@ -1,45 +1,35 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
 
 /**
- * infinite_add - Adds two numbers as strings
- * @n1: The first number
- * @n2: The second number
- * @r: The buffer to store the result
- * @size_r: The buffer size
+ * print_number - printing number with puts
  *
- * Return: Pointer to the result or 0 if the result can't fit in r
+ * @n: input int
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+void print_number(int n)
 {
-	int carry = 0;
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
-	int max_len = len1 > len2 ? len1 : len2;
+	/*Declaring variables*/
+	int count = 0, pow = 1;
+	unsigned int num = n;
 
-	if (max_len + 1 > size_r)
-		return (0);
 
-	r[max_len + 1] = '\0';
-
-	while (len1 > 0 || len2 > 0)
+	if (n < 0) /*Evaluate this condition*/
 	{
-		int num1 = len1 > 0 ? n1[--len1] - '0' : 0;
-		int num2 = len2 > 0 ? n2[--len2] - '0' : 0;
-		int sum = num1 + num2 + carry;
-
-		carry = sum / 10;
-		r[max_len--] = sum % 10 + '0';
+		_putchar('-');
+		num = -n;
 	}
-
-	if (carry)
+	while (n != 0)
 	{
-		if (max_len == 0)
-			return (0);
-		r[max_len] = carry + '0';
-		return (r);
+		n /= 10;
+		count++;
 	}
-
-	return (r + 1);
+	while (count > 1)
+	{
+		pow *= 10;
+		count--;
+	}
+	while (pow >= 1)
+	{
+		_putchar(num / pow % 10 + '0');
+		pow /= 10;
+	}
 }
