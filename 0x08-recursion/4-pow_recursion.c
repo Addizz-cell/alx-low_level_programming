@@ -1,17 +1,19 @@
 #include "main.h"
 
 /**
- * factorial - returns the factorial of a number
- * @n: the number
+ * _pow_recursion - entry point
+ * @x: the input
+ * @y: the output
  *
- * Return: the factorial, -1 if n is negative
+ * Return: x *_pow_recursion(x, y - 1)
  */
-int factorial(int n)
+int _pow_recursion(int x, int y)
 {
-	if (n < 0)
+	if (y < 0)
 		return (-1);
-	else if (n == 0)
+
+	if (y == 0)
 		return (1);
-	else
-		return (n * factorial(n - 1)); /* Recursive call */
+
+	return (x * _pow_recursion(x, y - 1));
 }
