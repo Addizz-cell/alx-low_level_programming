@@ -7,4 +7,6 @@ int main(int argc, char *argv[]);
 void init(char *str, int l);
 int check_for_digits(char **av);
 char *mul(char n, char *num, int num_index, char *dest, int dest_index);
-void _print(char *str, int l)
+void _print(char *str, int l);
+int _putchar(char c);
+
