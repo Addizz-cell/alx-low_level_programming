@@ -15,6 +15,11 @@ struct dog
 };
 
 /**
+ * dog_t - Typedef for struct dog
+ */
+typedef struct dog dog_t;
+
+/**
  * print_dog - Prints information about a dog
  * @d: Pointer to the struct dog
  */
